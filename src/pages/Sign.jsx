@@ -23,7 +23,7 @@ export default function Sign() {
   const [limitTouched, setLimitTouched] = useState(false);
   const [contract, setContract] = useState('');
   const [refusal, setRefusal] = useState('');
-  const [sigMode, setSigMode] = useState('typed');
+  const [sigMode, setSigMode] = useState('drawn');
   const [sigText, setSigText] = useState('');
   const [sigPath, setSigPath] = useState('');
   const [busy, setBusy] = useState('');
@@ -308,18 +308,6 @@ export default function Sign() {
                 <div className="flex gap-1">
                   <button
                     type="button"
-                    onClick={() => setSigMode('typed')}
-                    className={
-                      sigMode === 'typed'
-                        ? 'inline-flex items-center gap-1.5 rounded-sm border border-primary/60 bg-primary/10 px-2.5 py-1 font-heading text-[9px] uppercase tracking-[0.16em] text-primary'
-                        : 'inline-flex items-center gap-1.5 rounded-sm border border-border px-2.5 py-1 font-heading text-[9px] uppercase tracking-[0.16em] text-muted-foreground'
-                    }
-                  >
-                    <PenLine className="h-3 w-3" />
-                    Type
-                  </button>
-                  <button
-                    type="button"
                     onClick={() => setSigMode('drawn')}
                     className={
                       sigMode === 'drawn'
@@ -329,6 +317,18 @@ export default function Sign() {
                   >
                     <Hand className="h-3 w-3" />
                     Draw
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSigMode('typed')}
+                    className={
+                      sigMode === 'typed'
+                        ? 'inline-flex items-center gap-1.5 rounded-sm border border-primary/60 bg-primary/10 px-2.5 py-1 font-heading text-[9px] uppercase tracking-[0.16em] text-primary'
+                        : 'inline-flex items-center gap-1.5 rounded-sm border border-border px-2.5 py-1 font-heading text-[9px] uppercase tracking-[0.16em] text-muted-foreground'
+                    }
+                  >
+                    <PenLine className="h-3 w-3" />
+                    Type
                   </button>
                 </div>
               </div>
