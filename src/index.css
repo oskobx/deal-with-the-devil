@@ -4,89 +4,113 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --font-heading: ui-sans-serif, system-ui, sans-serif;
-    --font-body: ui-sans-serif, system-ui, sans-serif;
-    --font-display: ui-sans-serif, system-ui, sans-serif;
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 20 18% 6%;
+    --foreground: 38 45% 88%;
+    --card: 22 16% 9%;
+    --card-foreground: 38 45% 88%;
+    --popover: 22 16% 9%;
+    --popover-foreground: 38 45% 88%;
+    --primary: 14 78% 52%;
+    --primary-foreground: 30 40% 97%;
+    --secondary: 24 12% 14%;
+    --secondary-foreground: 38 40% 85%;
+    --muted: 24 12% 13%;
+    --muted-foreground: 33 15% 58%;
+    --accent: 32 55% 45%;
+    --accent-foreground: 30 40% 97%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 30 40% 97%;
+    --border: 26 16% 20%;
+    --input: 26 16% 20%;
+    --ring: 14 78% 52%;
+    --radius: 0.35rem;
+    --font-heading: 'Cinzel', Georgia, 'Times New Roman', serif;
+    --font-body: 'Crimson Pro', Georgia, serif;
+    --font-display: 'Cinzel', Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --ember: 22 92% 55%;
+    --brimstone: 45 88% 58%;
   }
 }
 
-
-
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body antialiased;
+    background-image:
+      radial-gradient(ellipse 90% 55% at 50% -10%, rgba(214, 74, 24, 0.20), transparent 65%),
+      radial-gradient(ellipse 60% 40% at 85% 8%, rgba(120, 30, 12, 0.18), transparent 70%);
+    background-attachment: fixed;
   }
+
+  h1, h2, h3, h4 {
+    @apply font-heading;
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer components {
+  .parchment {
+    background-color: #f0e2c4;
+    background-image:
+      radial-gradient(circle at 18% 22%, rgba(140, 100, 50, 0.16), transparent 45%),
+      radial-gradient(circle at 82% 78%, rgba(120, 80, 40, 0.18), transparent 50%),
+      radial-gradient(circle at 55% 45%, rgba(255, 250, 235, 0.65), transparent 60%);
+    color: #2c1c0e;
+    box-shadow: inset 0 0 60px rgba(90, 55, 20, 0.30), 0 18px 46px rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(90, 55, 20, 0.30);
+  }
+
+  .ink {
+    color: #2c1c0e;
+  }
+
+  .ink-muted {
+    color: #6b4a2a;
+  }
+
+  .ember-glow {
+    box-shadow: 0 0 24px rgba(226, 96, 32, 0.35), 0 0 72px rgba(200, 60, 15, 0.18);
+  }
+
+  .hairline {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.92; transform: translateY(0) scale(1); }
+  25% { opacity: 0.68; transform: translateY(-1px) scale(1.02); }
+  50% { opacity: 1; transform: translateY(0.5px) scale(0.99); }
+  75% { opacity: 0.78; transform: translateY(-0.5px) scale(1.01); }
+}
+
+.flicker {
+  animation: flicker 2.6s ease-in-out infinite;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rise {
+  animation: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes emberUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-120px) scale(0.2); opacity: 0; }
+}
+
+.ember {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #ffd27a, #e8601c 60%, transparent 70%);
+  animation: emberUp linear forwards;
 }

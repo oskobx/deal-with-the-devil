@@ -1,0 +1,85 @@
+{
+  "name": "Pact",
+  "type": "object",
+  "properties": {
+    "public_token": {
+      "type": "string"
+    },
+    "witness_token": {
+      "type": "string"
+    },
+    "nickname": {
+      "type": "string"
+    },
+    "habit": {
+      "type": "string"
+    },
+    "habit_type": {
+      "type": "string"
+    },
+    "normal_spend": {
+      "type": "number"
+    },
+    "limit_amount": {
+      "type": "number"
+    },
+    "spent": {
+      "type": "number"
+    },
+    "contract_text": {
+      "type": "string"
+    },
+    "signature_type": {
+      "type": "string"
+    },
+    "signature_text": {
+      "type": "string"
+    },
+    "signature_path": {
+      "type": "string"
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "ends_at": {
+      "type": "string"
+    },
+    "witness_name": {
+      "type": "string"
+    },
+    "witnessed_at": {
+      "type": "string"
+    },
+    "redeemed": {
+      "type": "boolean"
+    },
+    "redeemed_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "public_token",
+    "witness_token",
+    "nickname",
+    "habit",
+    "limit_amount"
+  ],
+  "rls": {
+    "read": false,
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

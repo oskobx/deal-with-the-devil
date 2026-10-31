@@ -1,0 +1,46 @@
+{
+  "name": "SinLog",
+  "type": "object",
+  "properties": {
+    "pact_id": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "day": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "devil_reply": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "pact_id",
+    "kind"
+  ],
+  "rls": {
+    "read": false,
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

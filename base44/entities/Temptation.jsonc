@@ -1,0 +1,37 @@
+{
+  "name": "Temptation",
+  "type": "object",
+  "properties": {
+    "pact_id": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "witness_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "pact_id",
+    "message"
+  ],
+  "rls": {
+    "read": false,
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
