@@ -1,4 +1,40 @@
 import { useMemo } from 'react';
+import { FlameTongue } from '@/components/CartoonFlames';
+
+const bandFlames = (count, seed) =>
+  Array.from({ length: count }, (_, i) => {
+    const scale = 0.78 + Math.abs(Math.sin(i * 1.7 + seed)) * 0.64;
+    return {
+      x: (i / (count - 1)) * 1180 - 20,
+      y: 222 - 100 * scale,
+      scale,
+      delay: `-${((i * 0.42) % 3.4).toFixed(2)}s`
+    };
+  });
+
+function FlameBand({ tone, count, seed, className }) {
+  const flames = useMemo(() => bandFlames(count, seed), [count, seed]);
+  const outer = tone === 'back' ? '#a82c09' : '#e2520e';
+  const inner = tone === 'back' ? '#dd4f0d' : '#ffb43c';
+
+  return (
+    <svg viewBox="0 0 1200 220" preserveAspectRatio="none" className={className} aria-hidden="true">
+      {flames.map((f, i) => (
+        <FlameTongue
+          key={i}
+          x={f.x}
+          y={f.y}
+          scale={f.scale}
+          delay={f.delay}
+          outer={outer}
+          inner={inner}
+          strokeWidth={4}
+          nonScaling
+        />
+      ))}
+    </svg>
+  );
+}
 
 export default function Hellfire() {
   const embers = useMemo(
@@ -18,35 +54,11 @@ export default function Hellfire() {
       <div className="hellfire-glow" />
 
       <div className="hellfire-band hellfire-band-back">
-        <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="hfBack" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#b5300c" stopOpacity="0" />
-              <stop offset="45%" stopColor="#a52c0c" stopOpacity="0.32" />
-              <stop offset="100%" stopColor="#4e0f05" stopOpacity="0.6" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M0 300 L0 168 C64 116 96 196 158 142 C214 94 246 178 308 128 C368 80 404 172 468 120 C528 72 566 166 628 112 C688 62 726 176 790 124 C848 78 884 172 946 120 C1006 70 1042 168 1104 118 C1152 80 1178 146 1200 126 L1200 300 Z"
-            fill="url(#hfBack)"
-          />
-        </svg>
+        <FlameBand tone="back" count={13} seed={1.4} />
       </div>
 
       <div className="hellfire-band hellfire-band-front">
-        <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="hfFront" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#ffb45c" stopOpacity="0" />
-              <stop offset="42%" stopColor="#ff7a22" stopOpacity="0.34" />
-              <stop offset="100%" stopColor="#d63c0c" stopOpacity="0.62" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M0 300 L0 216 C48 178 84 236 132 200 C186 160 218 226 268 190 C320 152 356 222 410 186 C462 152 500 224 552 188 C604 152 640 228 694 192 C748 156 786 226 840 190 C892 156 928 224 982 188 C1034 154 1072 226 1124 194 C1164 170 1184 200 1200 188 L1200 300 Z"
-            fill="url(#hfFront)"
-          />
-        </svg>
+        <FlameBand tone="front" count={11} seed={3.1} />
       </div>
 
       {embers.map((ember, i) => (

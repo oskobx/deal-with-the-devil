@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Flame, ScrollText, Users, TrendingDown } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import DevilImp from '@/components/DevilImp';
+import DevilScene from '@/components/DevilScene';
 import Footer from '@/components/Footer';
 import { money } from '@/lib/format';
 
@@ -50,9 +51,7 @@ export default function Home() {
 
       <main className="mx-auto max-w-md px-6">
         <section className="pt-12 text-center">
-          <div className="flex justify-center">
-            <DevilImp className="h-44 w-44 -rotate-2" />
-          </div>
+          <DevilScene />
           <p className="mt-7 font-heading text-[10px] uppercase tracking-[0.42em] text-primary/80">
             Halloween season · seven days only
           </p>

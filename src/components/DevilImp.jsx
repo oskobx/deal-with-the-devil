@@ -11,7 +11,7 @@ export default function DevilImp({ className, alt = 'A grinning cartoon devil wi
       alt={alt}
       fittingType="fill"
       className={cn(
-        'shrink-0 rounded-[16px] border-2 border-[#26170b] bg-[#f2e3c0] shadow-[3px_3px_0_rgba(0,0,0,0.55)]',
+        'imp-cut shrink-0 border-[2.5px] border-[#26170b] bg-[#f2e3c0] shadow-[3px_3px_0_rgba(0,0,0,0.55)]',
         className
       )}
     />
