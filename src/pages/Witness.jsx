@@ -106,7 +106,7 @@ export default function Witness() {
           {state === 'loading' ? (
             <p className="text-center text-[14px] text-muted-foreground">Opening the witness box…</p>
           ) : (
-            <div className="rounded-sm border border-border bg-card px-6 py-7 text-center">
+            <div className="ink-card bg-card px-6 py-7 text-center">
               <Sigil className="mx-auto h-9 w-9 text-muted-foreground/60" />
               <h1 className="mt-4 font-display text-[24px]">This witness link is dead</h1>
               <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">
@@ -114,7 +114,7 @@ export default function Witness() {
               </p>
               <Link
                 to="/sign"
-                className="mt-5 inline-block rounded-sm bg-primary px-5 py-3 font-heading text-[10.5px] uppercase tracking-[0.2em] text-primary-foreground"
+                className="btn-ink mt-5 inline-block border-2 border-[#1e0f06] bg-primary px-5 py-3 font-heading text-[10.5px] uppercase tracking-[0.2em] text-primary-foreground"
               >
                 Sign your own pact
               </Link>
@@ -135,7 +135,7 @@ export default function Witness() {
       {header}
       <main className="mx-auto max-w-md px-6">
         {!status.witnessed && (
-          <section className="rise parchment mt-6 rounded-sm">
+          <section className="rise parchment mt-6">
             <div className="px-6 py-6">
               <p className="font-heading text-[9px] uppercase tracking-[0.3em] ink-muted">
                 You have been summoned
@@ -159,7 +159,7 @@ export default function Witness() {
                 type="button"
                 onClick={countersign}
                 disabled={!!busy}
-                className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-[#5a2410] px-5 py-3.5 font-heading text-[10.5px] uppercase tracking-[0.2em] text-[#f8f0dd] transition-opacity hover:opacity-90 disabled:opacity-60"
+                className="btn-ink mt-3 inline-flex w-full items-center justify-center gap-2 border-2 border-[#2a1206] bg-[#5a2410] px-5 py-3.5 font-heading text-[10.5px] uppercase tracking-[0.18em] text-[#f8f0dd] hover:opacity-90 disabled:opacity-60"
               >
                 {busy === 'countersign' ? (
                   <Loader2 className="h-3.5 w-3.5 animate-spin" />
@@ -175,12 +175,12 @@ export default function Witness() {
 
         <PactHeader pact={pact} />
 
-        <div className="mt-6 rounded-sm border border-border bg-card/60 px-5 py-5">
+        <div className="ink-card mt-6 bg-card/70 px-5 py-5">
           <SoulMeter percent={status.percentRemaining} spent={status.spent} limit={status.limit} />
         </div>
 
         {status.overLimit && !status.redeemed && (
-          <div className="mt-4 rounded-sm border border-primary/50 bg-primary/[0.1] px-5 py-4">
+          <div className="ink-card mt-4 border-primary/50 bg-primary/[0.1] px-5 py-4">
             <p className="font-heading text-[10px] uppercase tracking-[0.3em] text-[#ff9a6a]">
               Damned
             </p>
@@ -207,7 +207,7 @@ export default function Witness() {
                   type="button"
                   onClick={() => tempt(message)}
                   disabled={!!busy}
-                  className="flex w-full items-center justify-between gap-3 rounded-sm border border-border bg-card/50 px-4 py-3 text-left text-[14px] italic text-foreground/85 transition-colors hover:border-primary/50 hover:text-foreground disabled:opacity-50"
+                  className="flex w-full items-center justify-between gap-3 rounded-[14px] border-2 border-border bg-card/60 px-4 py-3 text-left text-[14px] italic text-foreground/85 transition-colors hover:border-primary/60 hover:text-foreground disabled:opacity-50"
                 >
                   <span>{message}</span>
                   {busy === 'tempt' ? (
@@ -230,7 +230,7 @@ export default function Witness() {
         <section className="mt-9">
           <Link
             to="/sign"
-            className="flex w-full items-center justify-center gap-2 rounded-sm border border-primary/50 bg-primary/[0.08] px-6 py-4 font-heading text-[10.5px] uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary/[0.14]"
+            className="btn-ink flex w-full items-center justify-center gap-2 border-2 border-primary/50 bg-primary/[0.1] px-6 py-4 font-heading text-[10.5px] uppercase tracking-[0.18em] text-primary hover:bg-primary/[0.16]"
           >
             <Flame className="h-3.5 w-3.5" />
             Sign your own pact

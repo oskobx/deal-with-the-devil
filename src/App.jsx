@@ -6,6 +6,7 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
+import Hellfire from '@/components/Hellfire';
 import Home from '@/pages/Home';
 import Ledger from '@/pages/Ledger';
 import Sign from '@/pages/Sign';
@@ -38,14 +39,17 @@ const AuthenticatedApp = () => {
 
   // Render the main app
   return (
-    <Routes>
+    <>
+      <Hellfire />
+      <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/ledger" element={<Ledger />} />
       <Route path="/sign" element={<Sign />} />
       <Route path="/p/:token" element={<Pact />} />
       <Route path="/w/:token" element={<Witness />} />
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </>
   );
 };
 

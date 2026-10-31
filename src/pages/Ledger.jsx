@@ -67,7 +67,7 @@ export default function Ledger() {
 
         <div className="mt-7 grid grid-cols-2 gap-2.5">
           {tiles.map((t) => (
-            <div key={t.label} className="rounded-sm border border-border bg-card/60 px-4 py-4">
+            <div key={t.label} className="ink-card bg-card/70 px-4 py-4">
               <p className="font-heading text-2xl tracking-tight">{t.value}</p>
               <p className="mt-1 text-[10.5px] uppercase leading-snug tracking-[0.14em] text-muted-foreground">
                 {t.label}
@@ -87,7 +87,7 @@ export default function Ledger() {
             Recent pacts
           </h2>
           {recent.length === 0 ? (
-            <div className="mt-3 rounded-sm border border-dashed border-border px-5 py-6 text-center">
+            <div className="mt-3 rounded-[16px] border-2 border-dashed border-border px-5 py-6 text-center">
               <p className="text-[13.5px] text-muted-foreground">
                 No pacts yet. The ledger starts at zero.
               </p>
@@ -111,7 +111,7 @@ export default function Ledger() {
 
         <Link
           to="/sign"
-          className="mt-9 flex w-full items-center justify-center gap-2 rounded-sm bg-primary px-6 py-4 font-heading text-[10.5px] uppercase tracking-[0.2em] text-primary-foreground transition-all hover:brightness-110"
+          className="btn-ink mt-9 flex w-full items-center justify-center gap-2 border-2 border-[#1e0f06] bg-primary px-6 py-4 font-heading text-[10.5px] uppercase tracking-[0.18em] text-primary-foreground hover:brightness-110"
         >
           <Flame className="h-3.5 w-3.5" />
           Add your soul to the ledger

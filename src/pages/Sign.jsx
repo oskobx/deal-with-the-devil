@@ -9,7 +9,7 @@ import SignaturePad from '@/components/SignaturePad';
 import { HABIT_OPTIONS, money } from '@/lib/format';
 
 const field =
-  'w-full rounded-sm border border-border bg-background px-3 py-3 text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-primary/70';
+  'w-full rounded-[12px] border-2 border-[#3a2a20] bg-[#160e09] px-3 py-3 text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-primary/70';
 const label = 'font-heading text-[9.5px] uppercase tracking-[0.26em] text-muted-foreground';
 
 export default function Sign() {
@@ -156,8 +156,8 @@ export default function Sign() {
                     onClick={() => setHabitType(h.id)}
                     className={
                       active
-                        ? 'rounded-sm border border-primary bg-primary/15 px-3 py-3 text-left font-heading text-[11px] uppercase tracking-[0.14em] text-primary transition-all'
-                        : 'rounded-sm border border-border bg-card/40 px-3 py-3 text-left font-heading text-[11px] uppercase tracking-[0.14em] text-foreground/70 transition-all hover:border-primary/40 hover:text-foreground'
+                        ? 'rounded-[12px] border-2 border-primary bg-primary/20 px-3 py-3 text-left font-heading text-[11px] uppercase tracking-[0.14em] text-primary shadow-[2px_2px_0_rgba(0,0,0,0.45)] transition-all'
+                        : 'rounded-[12px] border-2 border-border bg-card/40 px-3 py-3 text-left font-heading text-[11px] uppercase tracking-[0.14em] text-foreground/70 transition-all hover:border-primary/50 hover:text-foreground'
                     }
                   >
                     {h.label}
@@ -242,7 +242,7 @@ export default function Sign() {
               type="button"
               onClick={draft}
               disabled={!!busy}
-              className="ember-glow mt-6 flex w-full items-center justify-center gap-2 rounded-sm bg-primary px-6 py-4 font-heading text-[11.5px] uppercase tracking-[0.22em] text-primary-foreground transition-all hover:brightness-110 disabled:opacity-60"
+              className="ember-glow btn-ink mt-6 flex w-full items-center justify-center gap-2 border-2 border-[#1e0f06] bg-primary px-6 py-4 font-heading text-[11.5px] uppercase tracking-[0.2em] text-primary-foreground hover:brightness-110 disabled:opacity-60"
             >
               {busy === 'draft' ? (
                 <>
@@ -261,7 +261,7 @@ export default function Sign() {
 
         {stage === 'refused' && (
           <div className="rise">
-            <div className="mt-10 rounded-sm border border-border bg-card px-6 py-7">
+            <div className="ink-card mt-10 bg-card px-6 py-7">
               <Sigil className="h-8 w-8 text-muted-foreground" />
               <p className="mt-4 text-[16px] leading-relaxed text-foreground/85">{refusal}</p>
               <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground">
@@ -276,7 +276,7 @@ export default function Sign() {
                 setHabitType('');
                 setCustomHabit('');
               }}
-              className="mt-5 w-full rounded-sm border border-border px-6 py-3.5 font-heading text-[10.5px] uppercase tracking-[0.2em] text-foreground/75 transition-colors hover:border-primary/50 hover:text-primary"
+              className="btn-ink mt-5 w-full border-2 border-border px-6 py-3.5 font-heading text-[10.5px] uppercase tracking-[0.2em] text-foreground/75 hover:border-primary/60 hover:text-primary"
             >
               Back
             </button>
@@ -292,7 +292,7 @@ export default function Sign() {
               The contract
             </h1>
 
-            <div className="parchment mt-6 rounded-sm">
+            <div className="parchment mt-6">
               <div className="px-6 py-7">
                 <p className="whitespace-pre-line text-[15.5px] leading-[1.68] ink">{contract}</p>
                 <div className="my-5 h-px bg-[#c2a679]/60" />
@@ -354,7 +354,7 @@ export default function Sign() {
                 type="button"
                 onClick={seal}
                 disabled={!!busy}
-                className="ember-glow mt-5 flex w-full items-center justify-center gap-2 rounded-sm bg-primary px-6 py-4 font-heading text-[11.5px] uppercase tracking-[0.22em] text-primary-foreground transition-all hover:brightness-110 disabled:opacity-60"
+                className="ember-glow btn-ink mt-5 flex w-full items-center justify-center gap-2 border-2 border-[#1e0f06] bg-primary px-6 py-4 font-heading text-[11.5px] uppercase tracking-[0.2em] text-primary-foreground hover:brightness-110 disabled:opacity-60"
               >
                 {busy === 'seal' ? (
                   <>

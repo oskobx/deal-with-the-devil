@@ -66,20 +66,20 @@ export default function Home() {
         <div className="mt-10">
           <Link
             to="/sign"
-            className="ember-glow flex w-full items-center justify-center gap-2 rounded-sm bg-primary px-6 py-4 font-heading text-[13px] uppercase tracking-[0.24em] text-primary-foreground transition-all hover:brightness-110 active:scale-[0.99]"
+            className="ember-glow btn-ink flex w-full items-center justify-center gap-2 border-2 border-[#1e0f06] bg-primary px-6 py-4 font-heading text-[13px] uppercase tracking-[0.22em] text-primary-foreground hover:brightness-110"
           >
             <Flame className="h-4 w-4" />
             Sign the pact
           </Link>
           <Link
             to="/ledger"
-            className="mt-3 flex w-full items-center justify-center rounded-sm border border-border px-6 py-3.5 font-heading text-[11px] uppercase tracking-[0.22em] text-foreground/60 transition-colors hover:border-primary/50 hover:text-primary"
+            className="btn-ink mt-3 flex w-full items-center justify-center border-2 border-border px-6 py-3.5 font-heading text-[11px] uppercase tracking-[0.22em] text-foreground/60 hover:border-primary/60 hover:text-primary"
           >
             Consult the ledger
           </Link>
         </div>
 
-        <section className="parchment mt-12 rounded-sm">
+        <section className="parchment mt-12">
           <div className="px-6 py-7">
             <h2 className="text-center font-heading text-[11px] uppercase tracking-[0.32em] ink-muted">
               The terms
@@ -103,7 +103,7 @@ export default function Home() {
 
         <section className="mt-9 grid grid-cols-2 gap-2.5">
           {STATS.map(({ label, value, icon: Icon }) => (
-            <div key={label} className="rounded-sm border border-border bg-card/60 px-4 py-4">
+            <div key={label} className="ink-card bg-card/70 px-4 py-4">
               <Icon className="h-3.5 w-3.5 text-primary/70" />
               <p className="mt-3 font-heading text-2xl tracking-tight">{value}</p>
               <p className="mt-0.5 text-[11px] uppercase tracking-[0.14em] text-muted-foreground">

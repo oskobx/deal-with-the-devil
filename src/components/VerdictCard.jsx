@@ -14,7 +14,7 @@ export default function VerdictCard({ pact }) {
   const spend = status.normalSpend - status.spent;
 
   return (
-    <section className="mt-8 rounded-sm border border-border bg-card px-5 py-6">
+    <section className="ink-card mt-8 bg-card px-5 py-6">
       <p className="text-center font-heading text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
         Verdict
       </p>

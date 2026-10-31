@@ -12,7 +12,7 @@ function CopyRow({ label, hint, value }) {
   };
 
   return (
-    <div className="rounded-sm border border-border bg-card/60 px-4 py-3.5">
+    <div className="rounded-[14px] border-2 border-border bg-card/60 px-4 py-3.5">
       <p className="font-heading text-[9.5px] uppercase tracking-[0.24em] text-primary/80">{label}</p>
       <p className="mt-1.5 break-all text-[12px] leading-snug text-muted-foreground">{value}</p>
       <div className="mt-3 flex items-center justify-between gap-3">
@@ -20,7 +20,7 @@ function CopyRow({ label, hint, value }) {
         <button
           type="button"
           onClick={handle}
-          className="inline-flex items-center gap-1.5 rounded-sm border border-border px-3 py-1.5 font-heading text-[9.5px] uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:border-primary/60 hover:text-primary"
+          className="inline-flex items-center gap-1.5 rounded-[10px] border-2 border-border px-3 py-1.5 font-heading text-[9.5px] uppercase tracking-[0.16em] text-foreground/80 transition-colors hover:border-primary/60 hover:text-primary"
         >
           {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
           {copied ? 'Copied' : 'Copy'}

@@ -4,7 +4,7 @@ import { shortDate } from '@/lib/format';
 export default function PactScroll({ pact }) {
   const status = pact.status;
   return (
-    <section className="parchment mt-8 rounded-sm">
+    <section className="parchment mt-8">
       <div className="px-6 py-7">
         <div className="flex items-center justify-between">
           <p className="font-heading text-[9px] uppercase tracking-[0.3em] ink-muted">

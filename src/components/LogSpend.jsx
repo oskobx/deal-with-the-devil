@@ -37,7 +37,7 @@ export default function LogSpend({ token, cleanLoggedToday, disabled, onDone }) 
 
   if (disabled) {
     return (
-      <section className="mt-8 rounded-sm border border-border bg-card/60 px-5 py-5">
+      <section className="ink-card mt-8 bg-card/70 px-5 py-5">
         <p className="font-heading text-[10px] uppercase tracking-[0.26em] text-muted-foreground">
           The ledger is closed
         </p>
@@ -49,7 +49,7 @@ export default function LogSpend({ token, cleanLoggedToday, disabled, onDone }) 
   }
 
   return (
-    <section className="mt-8 rounded-sm border border-border bg-card/60 px-5 py-5">
+    <section className="ink-card mt-8 bg-card/70 px-5 py-5">
       <h2 className="font-heading text-[10px] uppercase tracking-[0.28em] text-foreground/70">
         Log it
       </h2>
@@ -64,14 +64,14 @@ export default function LogSpend({ token, cleanLoggedToday, disabled, onDone }) 
             inputMode="decimal"
             placeholder="0.00"
             aria-label="Amount spent"
-            className="w-full rounded-sm border border-border bg-background py-3 pl-7 pr-3 font-heading text-[18px] text-foreground outline-none transition-colors focus:border-primary/70"
+            className="w-full rounded-[12px] border-2 border-[#3a2a20] bg-[#160e09] py-3 pl-7 pr-3 font-heading text-[18px] text-foreground outline-none transition-colors focus:border-primary/70"
           />
         </div>
         <button
           type="button"
           onClick={logSin}
           disabled={!!busy}
-          className="inline-flex items-center gap-2 rounded-sm bg-primary px-4 py-3.5 font-heading text-[10px] uppercase tracking-[0.2em] text-primary-foreground transition-all hover:brightness-110 disabled:opacity-50"
+          className="btn-ink inline-flex items-center gap-2 border-2 border-[#1e0f06] bg-primary px-4 py-3.5 font-heading text-[10px] uppercase tracking-[0.18em] text-primary-foreground hover:brightness-110 disabled:opacity-50"
         >
           {busy === 'log_sin' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Flame className="h-3.5 w-3.5" />}
           Log a sin
@@ -81,7 +81,7 @@ export default function LogSpend({ token, cleanLoggedToday, disabled, onDone }) 
         type="button"
         onClick={() => run('log_clean', {})}
         disabled={!!busy || cleanLoggedToday}
-        className="mt-2.5 inline-flex w-full items-center justify-center gap-2 rounded-sm border border-border px-4 py-3 font-heading text-[10px] uppercase tracking-[0.2em] text-foreground/75 transition-colors hover:border-accent/60 hover:text-accent disabled:opacity-40"
+        className="btn-ink mt-2.5 inline-flex w-full items-center justify-center gap-2 border-2 border-border px-4 py-3 font-heading text-[10px] uppercase tracking-[0.18em] text-foreground/75 hover:border-accent/60 hover:text-accent disabled:opacity-40"
       >
         {busy === 'log_clean' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Sun className="h-3.5 w-3.5" />}
         {cleanLoggedToday ? 'Clean day already logged' : 'Log a clean day'}

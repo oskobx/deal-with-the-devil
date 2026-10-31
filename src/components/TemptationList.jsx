@@ -11,7 +11,7 @@ export default function TemptationList({ temptations }) {
         {temptations.map((t) => (
           <li
             key={t.id}
-            className="rise rounded-sm border border-primary/25 bg-primary/[0.07] px-4 py-3"
+            className="rise rounded-[14px] border-2 border-primary/30 bg-primary/[0.08] px-4 py-3"
           >
             <p className="flex items-start gap-2 text-[14.5px] italic leading-snug text-foreground/90">
               <Flame className="mt-[3px] h-3.5 w-3.5 shrink-0 text-primary/80" />

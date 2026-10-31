@@ -24,7 +24,7 @@ export default function DamnedPanel({ token, onDone }) {
   };
 
   return (
-    <section className="ember-glow mt-8 rounded-sm border border-primary/50 bg-gradient-to-b from-[#3b0f08] to-[#1b0a07] px-5 py-6">
+    <section className="ember-glow ink-card mt-8 border-primary/60 bg-gradient-to-b from-[#3b0f08] to-[#1b0a07] px-5 py-6">
       <p className="font-heading text-[10px] uppercase tracking-[0.34em] text-[#ff9a6a]">
         Damned
       </p>
@@ -39,7 +39,7 @@ export default function DamnedPanel({ token, onDone }) {
         href="https://donate.sfmfoodbank.org/page/92219/donate/"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-sm bg-[#f2c35a] px-4 py-3.5 font-heading text-[10.5px] uppercase tracking-[0.2em] text-[#2b1608] transition-all hover:brightness-105"
+        className="btn-ink mt-4 inline-flex w-full items-center justify-center gap-2 border-2 border-[#2a1206] bg-[#f2c35a] px-4 py-3.5 font-heading text-[10.5px] uppercase tracking-[0.18em] text-[#2b1608] hover:brightness-105"
       >
         <ExternalLink className="h-3.5 w-3.5" />
         Buy back your soul: donate $20
@@ -48,7 +48,7 @@ export default function DamnedPanel({ token, onDone }) {
         type="button"
         onClick={redeem}
         disabled={busy}
-        className="mt-2.5 inline-flex w-full items-center justify-center gap-2 rounded-sm border border-[#f2c35a]/40 px-4 py-3.5 font-heading text-[10.5px] uppercase tracking-[0.2em] text-[#f7d79a] transition-colors hover:bg-[#f2c35a]/10 disabled:opacity-50"
+        className="btn-ink mt-2.5 inline-flex w-full items-center justify-center gap-2 border-2 border-[#f2c35a]/40 px-4 py-3.5 font-heading text-[10.5px] uppercase tracking-[0.18em] text-[#f7d79a] hover:bg-[#f2c35a]/10 disabled:opacity-50"
       >
         {busy ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <HeartHandshake className="h-3.5 w-3.5" />}
         I did the good deed

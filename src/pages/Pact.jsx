@@ -59,7 +59,7 @@ export default function Pact() {
           {state === 'loading' ? (
             <p className="text-center text-[14px] text-muted-foreground">Consulting the archive…</p>
           ) : (
-            <div className="rounded-sm border border-border bg-card px-6 py-7 text-center">
+            <div className="ink-card bg-card px-6 py-7 text-center">
               <Sigil className="mx-auto h-9 w-9 text-muted-foreground/60" />
               <h1 className="mt-4 font-display text-[24px]">This link leads nowhere</h1>
               <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">
@@ -67,7 +67,7 @@ export default function Pact() {
               </p>
               <Link
                 to="/sign"
-                className="mt-5 inline-block rounded-sm bg-primary px-5 py-3 font-heading text-[10.5px] uppercase tracking-[0.2em] text-primary-foreground"
+                className="btn-ink mt-5 inline-block border-2 border-[#1e0f06] bg-primary px-5 py-3 font-heading text-[10.5px] uppercase tracking-[0.2em] text-primary-foreground"
               >
                 Sign a pact
               </Link>
@@ -87,7 +87,7 @@ export default function Pact() {
       {header}
       <main className="mx-auto max-w-md px-6">
         {location.state?.fresh && (
-          <div className="rise mt-6 rounded-sm border border-primary/40 bg-primary/[0.08] px-5 py-4">
+          <div className="rise ink-card mt-6 border-primary/50 bg-primary/[0.1] px-5 py-4">
             <p className="font-heading text-[9.5px] uppercase tracking-[0.28em] text-primary">
               The pact is sealed
             </p>
@@ -99,12 +99,12 @@ export default function Pact() {
 
         <PactHeader pact={pact} />
 
-        <div className="mt-6 rounded-sm border border-border bg-card/60 px-5 py-5">
+        <div className="ink-card mt-6 bg-card/70 px-5 py-5">
           <SoulMeter percent={status.percentRemaining} spent={status.spent} limit={status.limit} />
         </div>
 
         {flash && (
-          <div className="rise mt-4 rounded-sm border border-primary/30 bg-primary/[0.06] px-5 py-4">
+          <div className="rise ink-card mt-4 border-primary/40 bg-primary/[0.07] px-5 py-4">
             <p className="font-heading text-[9px] uppercase tracking-[0.28em] text-primary/80">
               The devil says
             </p>

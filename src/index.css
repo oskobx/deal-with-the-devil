@@ -4,32 +4,33 @@
 
 @layer base {
   :root {
-    --background: 20 18% 6%;
-    --foreground: 38 45% 88%;
-    --card: 22 16% 9%;
-    --card-foreground: 38 45% 88%;
-    --popover: 22 16% 9%;
-    --popover-foreground: 38 45% 88%;
-    --primary: 14 78% 52%;
-    --primary-foreground: 30 40% 97%;
-    --secondary: 24 12% 14%;
-    --secondary-foreground: 38 40% 85%;
-    --muted: 24 12% 13%;
-    --muted-foreground: 33 15% 58%;
-    --accent: 32 55% 45%;
-    --accent-foreground: 30 40% 97%;
-    --destructive: 0 72% 45%;
-    --destructive-foreground: 30 40% 97%;
-    --border: 26 16% 20%;
-    --input: 26 16% 20%;
-    --ring: 14 78% 52%;
-    --radius: 0.35rem;
-    --font-heading: 'Cinzel', Georgia, 'Times New Roman', serif;
+    --background: 18 34% 7%;
+    --foreground: 40 58% 90%;
+    --card: 18 26% 11%;
+    --card-foreground: 40 58% 90%;
+    --popover: 18 26% 11%;
+    --popover-foreground: 40 58% 90%;
+    --primary: 16 90% 56%;
+    --primary-foreground: 20 48% 8%;
+    --secondary: 22 22% 16%;
+    --secondary-foreground: 38 48% 86%;
+    --muted: 22 20% 15%;
+    --muted-foreground: 34 24% 63%;
+    --accent: 40 94% 58%;
+    --accent-foreground: 20 48% 8%;
+    --destructive: 2 80% 48%;
+    --destructive-foreground: 40 58% 95%;
+    --border: 30 28% 27%;
+    --input: 30 28% 27%;
+    --ring: 16 90% 56%;
+    --radius: 0.6rem;
+    --font-heading: 'Skranji', 'Cinzel', Georgia, 'Times New Roman', serif;
     --font-body: 'Crimson Pro', Georgia, serif;
-    --font-display: 'Cinzel', Georgia, serif;
+    --font-display: 'Skranji', 'Cinzel', Georgia, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-    --ember: 22 92% 55%;
-    --brimstone: 45 88% 58%;
+    --ember: 22 96% 56%;
+    --brimstone: 44 96% 60%;
+    --ink: 24 58% 10%;
   }
 }
 
@@ -41,39 +42,111 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
     background-image:
-      radial-gradient(ellipse 90% 55% at 50% -10%, rgba(214, 74, 24, 0.20), transparent 65%),
-      radial-gradient(ellipse 60% 40% at 85% 8%, rgba(120, 30, 12, 0.18), transparent 70%);
+      radial-gradient(ellipse 110% 55% at 50% 118%, rgba(244, 104, 26, 0.26), transparent 62%),
+      radial-gradient(ellipse 60% 40% at 8% 104%, rgba(176, 34, 8, 0.24), transparent 68%),
+      radial-gradient(ellipse 70% 45% at 92% 100%, rgba(150, 22, 6, 0.22), transparent 70%);
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {
     @apply font-heading;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
   }
 }
 
 @layer components {
+  /* Walnut-stained, hand-cut paper */
   .parchment {
-    background-color: #f0e2c4;
+    position: relative;
+    background-color: #f2e3c0;
     background-image:
-      radial-gradient(circle at 18% 22%, rgba(140, 100, 50, 0.16), transparent 45%),
-      radial-gradient(circle at 82% 78%, rgba(120, 80, 40, 0.18), transparent 50%),
-      radial-gradient(circle at 55% 45%, rgba(255, 250, 235, 0.65), transparent 60%);
-    color: #2c1c0e;
-    box-shadow: inset 0 0 60px rgba(90, 55, 20, 0.30), 0 18px 46px rgba(0, 0, 0, 0.65);
-    border: 1px solid rgba(90, 55, 20, 0.30);
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.26'/%3E%3C/svg%3E"),
+      radial-gradient(ellipse at 14% 16%, rgba(150, 100, 44, 0.24), transparent 44%),
+      radial-gradient(ellipse at 88% 84%, rgba(132, 82, 34, 0.26), transparent 46%),
+      radial-gradient(ellipse at 58% 42%, rgba(255, 252, 240, 0.85), transparent 62%),
+      linear-gradient(180deg, #f6e9cb, #ead6ad);
+    background-blend-mode: multiply, normal, normal, normal, normal;
+    color: #2a1a0c;
+    border: 2.5px solid #26170b;
+    border-radius: 18px 26px 16px 30px / 26px 16px 28px 18px;
+    box-shadow:
+      6px 6px 0 rgba(0, 0, 0, 0.55),
+      inset 0 0 44px rgba(120, 72, 30, 0.28);
+  }
+
+  .parchment::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    mix-blend-mode: multiply;
+    background-image:
+      radial-gradient(circle at 12% 20%, rgba(122, 79, 32, 0.18) 0 3%, rgba(122, 79, 32, 0.08) 3.4%, transparent 4.3%),
+      radial-gradient(circle at 86% 24%, rgba(122, 79, 32, 0.14) 0 4%, transparent 5%),
+      radial-gradient(circle at 68% 90%, rgba(122, 79, 32, 0.15) 0 5%, transparent 6%),
+      radial-gradient(circle at 32% 74%, rgba(150, 100, 40, 0.11) 0 2.6%, transparent 3.5%),
+      radial-gradient(circle at 94% 66%, rgba(110, 68, 26, 0.12) 0 2%, transparent 2.9%);
+  }
+
+  .parchment::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    box-shadow:
+      inset 0 0 0 1px rgba(90, 55, 20, 0.22),
+      inset 0 0 30px rgba(120, 66, 24, 0.32);
+    background: radial-gradient(ellipse at 50% 124%, rgba(78, 40, 12, 0.22), transparent 58%);
   }
 
   .ink {
-    color: #2c1c0e;
+    color: #2a1a0c;
   }
 
   .ink-muted {
-    color: #6b4a2a;
+    color: #6d4a26;
+  }
+
+  /* Charred card with a thick drawn outline */
+  .ink-card {
+    position: relative;
+    background-image: linear-gradient(180deg, rgba(255, 236, 214, 0.055), rgba(0, 0, 0, 0.34));
+    border: 2px solid hsl(30 30% 25%);
+    border-radius: 16px 22px 14px 24px / 22px 14px 26px 16px;
+    box-shadow:
+      5px 5px 0 rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 240, 220, 0.06);
+  }
+
+  /* Drawn-button geometry: hard shadow, wobbles when pressed */
+  .btn-ink {
+    border-radius: 14px 18px 12px 20px / 18px 12px 20px 14px;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.55);
+    transition:
+      transform 0.12s ease,
+      box-shadow 0.12s ease,
+      filter 0.15s ease,
+      background-color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  .btn-ink:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.55);
+  }
+
+  .btn-ink:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
   }
 
   .ember-glow {
-    box-shadow: 0 0 24px rgba(226, 96, 32, 0.35), 0 0 72px rgba(200, 60, 15, 0.18);
+    box-shadow:
+      4px 4px 0 rgba(0, 0, 0, 0.55),
+      0 0 26px rgba(255, 108, 32, 0.42),
+      0 0 70px rgba(210, 60, 12, 0.24);
   }
 
   .hairline {
@@ -82,10 +155,10 @@
 }
 
 @keyframes flicker {
-  0%, 100% { opacity: 0.92; transform: translateY(0) scale(1); }
-  25% { opacity: 0.68; transform: translateY(-1px) scale(1.02); }
+  0%, 100% { opacity: 0.94; transform: translateY(0) scale(1); }
+  25% { opacity: 0.7; transform: translateY(-1px) scale(1.03); }
   50% { opacity: 1; transform: translateY(0.5px) scale(0.99); }
-  75% { opacity: 0.78; transform: translateY(-0.5px) scale(1.01); }
+  75% { opacity: 0.8; transform: translateY(-0.5px) scale(1.02); }
 }
 
 .flicker {
@@ -113,4 +186,92 @@
   border-radius: 9999px;
   background: radial-gradient(circle, #ffd27a, #e8601c 60%, transparent 70%);
   animation: emberUp linear forwards;
+}
+
+/* ---------- Ambient hellfire ---------- */
+
+.hellfire {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hellfire-glow {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -34vh;
+  height: 78vh;
+  background:
+    radial-gradient(ellipse 58% 68% at 50% 100%, rgba(255, 122, 30, 0.34), rgba(176, 40, 10, 0.14) 55%, transparent 76%),
+    radial-gradient(ellipse 40% 50% at 20% 100%, rgba(214, 52, 10, 0.22), transparent 70%);
+  animation: hellGlowPulse 7s ease-in-out infinite;
+}
+
+.hellfire-band {
+  position: absolute;
+  left: -6%;
+  right: -6%;
+  bottom: -1px;
+  height: 34vh;
+  max-height: 300px;
+  transform-origin: 50% 100%;
+}
+
+.hellfire-band svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hellfire-band-back {
+  opacity: 0.85;
+  animation: hellBreathe 9.5s ease-in-out infinite;
+}
+
+.hellfire-band-front {
+  animation: hellBreathe 6.5s ease-in-out infinite reverse;
+}
+
+.hellfire-ember {
+  position: absolute;
+  bottom: 5vh;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 50% 60%, #ffd98a, #ff8a2a 55%, rgba(255, 80, 0, 0) 74%);
+  animation-name: emberRise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes hellBreathe {
+  0%, 100% { transform: translateY(5%) scaleY(0.94) scaleX(1); opacity: 0.8; }
+  50% { transform: translateY(-3%) scaleY(1.06) scaleX(1.02); opacity: 1; }
+}
+
+@keyframes hellGlowPulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.82; }
+}
+
+@keyframes emberRise {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0; }
+  12% { opacity: 0.85; }
+  70% { opacity: 0.6; }
+  100% { transform: translate3d(var(--drift, 0px), -68vh, 0) scale(0.28); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hellfire-band,
+  .hellfire-glow,
+  .hellfire-ember,
+  .flicker,
+  .rise {
+    animation: none !important;
+  }
+
+  .hellfire-ember {
+    display: none;
+  }
 }
