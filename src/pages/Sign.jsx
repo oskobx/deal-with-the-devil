@@ -207,7 +207,7 @@ export default function Sign() {
                     value={normal}
                     onChange={(e) => onNormal(e.target.value)}
                     inputMode="decimal"
-                    placeholder="70"
+                    placeholder="100"
                     className={`${field} pl-7`}
                   />
                 </div>
@@ -226,7 +226,7 @@ export default function Sign() {
                     value={limit}
                     onChange={(e) => onLimit(e.target.value)}
                     inputMode="decimal"
-                    placeholder="35"
+                    placeholder="70"
                     className={`${field} pl-7`}
                   />
                 </div>
