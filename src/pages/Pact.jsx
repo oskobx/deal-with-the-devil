@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
-import Sigil from '@/components/Sigil';
+import DevilImp from '@/components/DevilImp';
 import Footer from '@/components/Footer';
 import PactHeader from '@/components/PactHeader';
 import PactScroll from '@/components/PactScroll';
@@ -44,7 +44,7 @@ export default function Pact() {
       <Link to="/" className="text-muted-foreground transition-colors hover:text-primary">
         <ArrowLeft className="h-4 w-4" />
       </Link>
-      <Sigil className="h-6 w-6 text-primary" />
+      <DevilImp className="h-8 w-8 -rotate-3" />
       <span className="font-heading text-[10px] uppercase tracking-[0.26em] text-foreground/70">
         Your pact
       </span>
@@ -60,7 +60,7 @@ export default function Pact() {
             <p className="text-center text-[14px] text-muted-foreground">Consulting the archive…</p>
           ) : (
             <div className="ink-card bg-card px-6 py-7 text-center">
-              <Sigil className="mx-auto h-9 w-9 text-muted-foreground/60" />
+              <DevilImp className="mx-auto h-20 w-20 -rotate-2" />
               <h1 className="mt-4 font-display text-[24px]">This link leads nowhere</h1>
               <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">
                 No pact answers to that code. Check the link you bookmarked, or sign a fresh one.

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Flame, ScrollText, Users, TrendingDown } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
-import Sigil from '@/components/Sigil';
+import DevilImp from '@/components/DevilImp';
 import Footer from '@/components/Footer';
 import { money } from '@/lib/format';
 
@@ -35,7 +35,7 @@ export default function Home() {
     <div className="min-h-screen">
       <header className="mx-auto flex max-w-md items-center justify-between px-6 pt-8">
         <div className="flex items-center gap-2 text-primary">
-          <Sigil className="h-7 w-7 flicker" />
+          <DevilImp className="h-9 w-9 -rotate-3" />
           <span className="font-heading text-[13px] uppercase tracking-[0.28em] text-foreground/80">
             Deal with the Devil
           </span>
@@ -49,8 +49,11 @@ export default function Home() {
       </header>
 
       <main className="mx-auto max-w-md px-6">
-        <section className="pt-14 text-center">
-          <p className="font-heading text-[10px] uppercase tracking-[0.42em] text-primary/80">
+        <section className="pt-12 text-center">
+          <div className="flex justify-center">
+            <DevilImp className="h-44 w-44 -rotate-2" />
+          </div>
+          <p className="mt-7 font-heading text-[10px] uppercase tracking-[0.42em] text-primary/80">
             Halloween season · seven days only
           </p>
           <h1 className="mt-5 font-display text-[42px] leading-[1.02] tracking-tight">

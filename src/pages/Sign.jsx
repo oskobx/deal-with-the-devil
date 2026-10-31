@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Flame, Loader2, PenLine, Hand } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
-import Sigil from '@/components/Sigil';
+import DevilImp from '@/components/DevilImp';
 import Footer from '@/components/Footer';
 import EmberBurst from '@/components/EmberBurst';
 import SignaturePad from '@/components/SignaturePad';
@@ -129,7 +129,7 @@ export default function Sign() {
         <Link to="/" className="text-muted-foreground transition-colors hover:text-primary">
           <ArrowLeft className="h-4 w-4" />
         </Link>
-        <Sigil className="h-6 w-6 text-primary" />
+        <DevilImp className="h-8 w-8 -rotate-3" />
         <span className="font-heading text-[10px] uppercase tracking-[0.26em] text-foreground/70">
           Sign the pact
         </span>
@@ -262,7 +262,7 @@ export default function Sign() {
         {stage === 'refused' && (
           <div className="rise">
             <div className="ink-card mt-10 bg-card px-6 py-7">
-              <Sigil className="h-8 w-8 text-muted-foreground" />
+              <DevilImp className="h-16 w-16" alt="The devil, declining your pact" />
               <p className="mt-4 text-[16px] leading-relaxed text-foreground/85">{refusal}</p>
               <p className="mt-4 text-[13px] leading-relaxed text-muted-foreground">
                 No pact was signed, and nothing was saved.

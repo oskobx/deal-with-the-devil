@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Flame } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
-import Sigil from '@/components/Sigil';
+import DevilImp from '@/components/DevilImp';
 import Footer from '@/components/Footer';
 import { money } from '@/lib/format';
 
@@ -53,7 +53,7 @@ export default function Ledger() {
         <Link to="/" className="text-muted-foreground transition-colors hover:text-primary">
           <ArrowLeft className="h-4 w-4" />
         </Link>
-        <Sigil className="h-6 w-6 text-primary" />
+        <DevilImp className="h-8 w-8 -rotate-3" />
         <h1 className="font-heading text-[11px] uppercase tracking-[0.28em] text-foreground/80">
           The Ledger
         </h1>
